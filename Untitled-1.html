@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel Rate Survey</title>
+</head>
+<body>
+ <form action="index.php" name = "Hotel Form" method ="POST">
+First name:<input type = "text" name="firstname"><br>
+Last name:<input type= "text" name ="lastname">
+
+Are you:<br>
+<input type="radio" name ="sex" value="male">Male<br>
+<input type="radio" name ="sex" value="female">Female<br>
+
+What amount of money are you willing to spend?:<br>
+<input type="checkbox" name="Under $200" value="Under $200">Under $200<br>
+<input type="checkbox" name="Under $500" value="Under $500">Under $500<br>
+<input type="checkbox" name="Over $1000" value="Over $1000">Over $1000<br>
+
+How?<br>
+<select name= "favorite">
+    <option value="" selected="selected">Apples</option>
+    <option value "Oranges" selected="selected">Oranges</option>
+    <option value "Bananas" selected="selected">Bananas</option>
+Comments:<br>
+ <textarea rows="5" cols="30"/> 
+ <input type ="submit" value="submit the questionnaire"/>
+
+</form>           
+
+   
+</body>
+</html>
