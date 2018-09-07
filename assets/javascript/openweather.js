@@ -6,10 +6,6 @@ var country = $("#country").val();
 var today_unix = Date.now(); // unix time
 var today_moment = moment(); // moment time
 
-
-
-
-
 // Here we are building the URL we need to query the database
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
 "q=" + city + "," + country + "&units=imperial&appid=" + APIKey;
