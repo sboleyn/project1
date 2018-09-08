@@ -32,17 +32,17 @@ if (country === "US") {
 var APIKey = "5887b8d504574dffbe86fb6dfad4bd60";
 
 // DO NOT Run this repeatedly, API only allows a finite number of calls for weather data !!
-for (let i = 0; i < date_arr.length; ++i) {
+for (let i = 0; i < date_arr.length - 1; ++i) {
 
     // Here we are building the URL we need to query the database   
     if (is_US_state) {
         var queryURL = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
-        "city=" + city + "," + state + "," + country + "&start_date=" +  start_date +
-        "&end_date" + end_date + "&key=" + APIKey;
+        "city=" + city + "," + state + "," + country + "&start_date=" +  date_arr[i] +
+        "&end_date" + date_arr[i+1] + "&key=" + APIKey;
     } else {
         var queryURL = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
-        "city=" + city + "," + country + "&start_date=" +  start_date +
-        "&end_date" + end_date + "&key=" + APIKey;  
+        "city=" + city + "," + country + "&start_date=" +  date_arr[i] +
+        "&end_date" + date_arr[i+1] + "&key=" + APIKey;  
     }
 
         // Here we run our AJAX call to the OpenWeatherMap API
