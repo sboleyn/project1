@@ -10,13 +10,21 @@ import * as moment from 'moment';
 
 // Use this API call to get Eventbrite Category Ids https://www.eventbriteapi.com/v3/categories/?token=B7UELWTCRT7HCHZN3I7S
 
-let dateFormat = "YYYY-MM-DDT00:00:00";
+let dateFormat = "YYYY-MM-DDThh:mm:ss";
 
-// Necessary letiables for weather
+let now = moment().format('LLLL');
+
+// Necessary variable for weather
 let city = $("#city").val();
 let country = $("#country").val();
-let start_date = moment($("#start-date").val()).format(dateFormat);
-let end_date = moment($("#end-date").val()).format(dateFormat);
+
+
+// let start_date = moment($("#start-date").val()).format(dateFormat);
+// let end_date = moment($("#end-date").val()).format(dateFormat);
+
+// for testing
+let end_date = moment().format(dateFormat);
+
 let queryURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 // Convert start and end dates in this format YYYY-MM-DDThh:mm:ssZ or YYYY-MM-DDThh:mm:ss
 
