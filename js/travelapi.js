@@ -7,7 +7,7 @@ performing and visutal arts 105
 Sports & Fitness 108
 Seasonal & Holiday 116 */
 
-exports.__esModule = true;
+// exports.__esModule = true;
 
 // This line should remain commented out 
 //https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
@@ -18,7 +18,7 @@ exports.__esModule = true;
 // Use this API call to get Eventbrite Category Ids https://www.eventbriteapi.com/v3/categories/?token=B7UELWTCRT7HCHZN3I7S
 
 var dateFormat = "YYYY-MM-DDThh:mm:ss";
-var now = moment().format('LLLL');
+
 // Necessary variable for weather
 var city = $("#city").val();
 var country = $("#country").val();
@@ -26,6 +26,7 @@ var country = $("#country").val();
 // let end_date = moment($("#end-date").val()).format(dateFormat);
 // for testing
 var end_date = moment().format(dateFormat);
+console.log(end_date);
 var queryURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 // Convert start and end dates in this format YYYY-MM-DDThh:mm:ssZ or YYYY-MM-DDThh:mm:ss
 // start_date.range_start=2019-01-01T00:00:00&start_date.range_end=2019-02-01T00:00:00
