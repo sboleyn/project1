@@ -27,21 +27,28 @@ console.log(end_date);
 
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 
-// start_date.range_start=2019-01-01T00:00:00&start_date.range_end=2019-02-01T00:00:00
-
-var queryURL = baseURL + "&start_date.range_start=" + start_date +"&start_date.range_end=" + end_date;
+var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date;
 
 //Need to get categories based off which picture is clicked, each picture should have onclick function that populates a categories into the query.
 
-$("")
-$.ajax({
-    url: queryURL,
-    method: "GET"
+
+// #portfolio is the section to add div to
+$("#gym").on("click", function () {
+
+    queryURL += "&categories=108"
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+        .then(function (resp) {
+            // Example return Music & Conversation with Marty
+            // Tue, Oct 23, 6:00 PM
+            // The cutting room, newyork ny
+            // starts at 27.00 on ticket fly (link to ticket)
+            console.log(queryURL);
+            console.log(resp);
+            $("#portfolio").append("<div class=col-12>");
+        });
+
 })
-    .then(function (resp) {
-    // Example return Music & Conversation with Marty
-    // Tue, Oct 23, 6:00 PM
-    // The cutting room, newyork ny
-    // starts at 27.00 on ticket fly (link to ticket)
-    console.log(resp);
-});
