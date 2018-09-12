@@ -1,5 +1,4 @@
 "use strict";
-
 /*
 music, 103
 food and drink, 110
@@ -7,7 +6,6 @@ Travel & Outdoor 109
 performing and visutal arts 105
 Sports & Fitness 108
 Seasonal & Holiday 116 */
-
 exports.__esModule = true;
 var moment = require("moment");
 // Use this API call to get Eventbrite Category Ids https://www.eventbriteapi.com/v3/categories/?token=B7UELWTCRT7HCHZN3I7S
