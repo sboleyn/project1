@@ -13,6 +13,8 @@ Seasonal & Holiday 116 */
 var dateFormat = "YYYY-MM-DDT00:00:00";
 // var dateFormat = "YYYY-MM-DDThh:mm:ss";
 
+var isClicked = false;
+
 // Necessary variable for weather
 var city = $("#city").val();
 var country = $("#country").val();
@@ -33,22 +35,41 @@ var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.
 
 
 // #portfolio is the section to add div to
+
+
 $("#gym").on("click", function () {
 
     queryURL += "&categories=108"
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-        .then(function (resp) {
-            // Example return Music & Conversation with Marty
-            // Tue, Oct 23, 6:00 PM
-            // The cutting room, newyork ny
-            // starts at 27.00 on ticket fly (link to ticket)
-            console.log(queryURL);
-            console.log(resp);
-            $("#portfolio").append("<div class=col-12>");
-        });
+    if (isClicked === false) {
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (resp) {
+                // Example return Music & Conversation with Marty
+                // Tue, Oct 23, 6:00 PM
+                // The cutting room, newyork ny
+                // starts at 27.00 on ticket fly (link to ticket)
+                $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
+                // $("#eventsDiv").append("<div class='col-12' id='addEvent'>");
+                console.log(queryURL);
+                // console.log(resp.events[0]);
+
+                for (var i = 0; i < 5; i++) {
+                    console.log(resp.events[i]);
+                    $('#eventsDiv').append(
+                        "<div class='col-lg-4 col-sm-6'><div class='card' style='width: 18rem;'><img class='card-img-top' src='...' alt='Card image cap'><div class='card-body'><h5 class='card-title'> Card title</h5><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href='#' class='btn btn-primary'>Go somewhere</a></div ></div ></div>"
+                    );
+                };
+
+
+                isClicked = true;
+                console.log(isClicked);
+
+            });
+    }
 
 })
+
+
