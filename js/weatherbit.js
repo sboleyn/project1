@@ -1,70 +1,78 @@
-// Necessary variables for weather
-var city = $("#city").val();
-var country = $("#country").val();
-var start_date = moment($("#start-date").val());
-var end_date = moment($("#end-date").val());
+$(document).ready(function() {
+    $("#calendar-input").daterangepicker();
+    $("#search-btn").on("click", function () {
 
-// Only get up to 16 days forecast, otherwise goes back a year
-var prediction = "forecast";
-var curr_date = moment();
-if ((curr_date.diff(end_date,"days") >= 16) && end_date.isAfter(curr_date)) { 
-    prediction = "history";
-    start_date = start_date.subtract(1,"years");
-    end_date = end_date.subtract(1,"years");
-}
+        // Necessary variables for weather
+        var city = $("#cityId").val().trim();
+        var country = $("#countryId").val().trim();
+        var start_date = moment($("#calendar-input").daterangepicker().val().split("-")[0].trim());
+        var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
 
-// Populate date array which holds range of dates
-var date_arr = [];
-var date_range = start_date.diff(end_date,"days");
-for (let i = 0; i < date_range; ++i) {
-    date_arr[i] = start_date.add(1,"days");
-}
+        // Only get up to 16 days forecast, otherwise goes back a year
+        var prediction = "forecast";
+        var predict = true;
+        var curr_date = moment();
+        if ((end_date.diff(curr_date,"days") >= 16) && end_date.isAfter(curr_date)) { 
+            prediction = "history";
+            predict = false;
+            start_date.subtract(1,"years");
+            end_date.subtract(1,"years");
+        }
 
-// Check if country is US
-if (country === "US") {
-    var is_US_state = true;
-    var state = $("#state").val();
-} else {
-    var is_US_state = false;
-}
+        // Populate date array which holds range of dates
+        var date_range = end_date.diff(start_date,"days") + 1; // 'Off by 1'
+        var date_offset = start_date.diff(curr_date,"days") + 1 ; // 'Off by 1'
+        // Check if country is US
+        if (country === "United States") {
+            var is_US_state = true;
+            var state_fullname = $("#stateId").val().trim();
+            state = abbrState(state_fullname,"abbr");
+        } else {
+            var is_US_state = false;
+        }
 
-// This is our weather bit API key
-var APIKey = "5887b8d504574dffbe86fb6dfad4bd60";
+        // This is our weather bit API key, can use another one for more calls
+        var APIKey = "5887b8d504574dffbe86fb6dfad4bd60";
 
-// DO NOT Run this repeatedly, API only allows a finite number of calls for weather data !!
-for (let i = 0; i < date_arr.length - 1; ++i) {
+        // DO NOT Run this repeatedly, API only allows a finite number of calls for weather data !!
+        // Only one a day for historical data :/
+        // Here we are building the URL we need to query the database   
+        if (is_US_state && !predict) {
+            var queryURL_withspaces = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
+            "city=" + city + "," + state + "&start_date=" + start_date.format("YYYY-MM-DD") +
+            "&end_date=" + end_date.format("YYYY-MM-DD") + "&key=" + APIKey;
+        } else if (!is_US_state && !predict) {
+            var queryURL_withspaces = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
+            "city=" + city + "," + country + "&start_date=" + start_date.format("YYYY-MM-DD") +
+            "&end_date=" + end_date.format("YYYY-MM-DD") + "&key=" + APIKey;  
+        } else if (is_US_state && predict) {
+            var queryURL_withspaces = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
+            "city=" + city + "," + state + "&key=" + APIKey;
+        } else if (!is_US_state && predict) {
+            var queryURL_withspaces = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
+            "city=" + city + "," + country + "&key=" + APIKey;  
+        }
 
-    // Here we are building the URL we need to query the database   
-    if (is_US_state) {
-        var queryURL = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
-        "city=" + city + "," + state + "," + country + "&start_date=" +  date_arr[i] +
-        "&end_date" + date_arr[i+1] + "&key=" + APIKey;
-    } else {
-        var queryURL = "https://api.weatherbit.io/v2.0/" + prediction + "/daily?" +
-        "city=" + city + "," + country + "&start_date=" +  date_arr[i] +
-        "&end_date" + date_arr[i+1] + "&key=" + APIKey;  
-    }
-
-        // Here we run our AJAX call to the OpenWeatherMap API
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-            // We store all of the retrieved data inside of an object called "response"
-            // Documentation available at https://www.weatherbit.io/api/weather-forecast-16-day
-            .then(function(response) {
-                $("#city-div").append("<p>City: " + reponse.city-name + "</p>");
-                $("#temp-div").append("<p>Temperature (F): " + response.data.temp + "</p>");
-                $("#max-temp-div").append("<p> Max Temperature (F): " + response.data.max_temp + "</p>");
-                $("#min-temp-div").append("<p> Min Temperature (F): " + response.data.min_temp + "</p>");
-                $("#wind-speed-div").append("<p> Windspeed (mph): " + response.data.wind_spd + "</p>"); 
-                $("#wind-dir-div").append("<p> Wind direction: " + response.data.wind_cdir_full + "</p>"); 
-                $("#clouds-div").append("<p> Clouds: " + response.data.clouds + "</p>");
-                $("#visibility-div").append("<p> Visibility %: " + response.data.vis + "</p>");
-                $("#snow-div").append("<p> Snow: " + response.data.snow + "</p>");
-                $("#snow-depth-div").append("<p> Snow Depth: " + response.data.snow_depth + "</p>");
-                
-                 console.log(JSON.stringify(response));
-            });
-}
+        queryURL = queryURL_withspaces.split(' ').join('+');
+        function display_weather(i) {
+            // Here we run our AJAX call to the WeatherBit API
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                // We store all of the retrieved data inside of an object called "response"
+                // Documentation available at https://www.weatherbit.io/api/weather-forecast-16-day
+                .then(function(response) {
+                    console.log("Index: " + i);
+                    console.log("Date: " + response.data[i].valid_date);
+                    console.log("Temperature (F): " + response.data[i].temp);
+                    console.log("Max Temperature (F): " + response.data[i].max_temp);
+                    console.log("Min Temperature (F): " + response.data[i].min_temp);
+                });
+        }
+        for (var i = date_offset; i < date_range + date_offset; ++i){
+            display_weather(i);
+        }
+    });
+});
     

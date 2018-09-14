@@ -13,6 +13,7 @@ Seasonal & Holiday 116 */
 var dateFormat = "YYYY-MM-DDT00:00:00";
 // var dateFormat = "YYYY-MM-DDThh:mm:ss";
 
+
 var isClicked = false;
 
 // Necessary variable for weather
@@ -20,6 +21,7 @@ var city = $("#city").val();
 var country = $("#country").val();
 // let start_date = moment($("#start-date").val()).format(dateFormat);
 // let end_date = moment($("#end-date").val()).format(dateFormat);
+
 
 $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
@@ -38,10 +40,10 @@ var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.
 
 // #portfolio is the section to add div to
 
-
 $("#gym").on("click", function () {
 
     queryURL += "&categories=108"
+
 
     $("#eventsDiv").empty();
 
@@ -278,6 +280,3 @@ $("#goToSeasonal").on("click", function () {
     // }
 
 })
-
-
-
