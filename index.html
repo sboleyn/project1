@@ -30,21 +30,21 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 
   <style>
-      #search-btn,
-      #search-address {
-        box-shadow: none;
-      }
+    #search-btn,
+    #search-address {
+      box-shadow: none;
+    }
 
-      #search-address {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
+    #search-address {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
-      #search-btn {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-    </style>
+    #search-btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  </style>
 
 </head>
 
@@ -81,18 +81,17 @@
           <h2 class="section-heading text-white">Date Selection</h2>
           <hr class="light my-4">
           <!-- Calendar Input -->
-          <input type="text" 
-              id="calendar-input"
-              class="cityStatesTypeahead span9 input-append btn  btn-xl"
-              name="search-address"
-              autocomplete="off"
-              data-provide="typeahead"
-              required="required"
-              autofocus
-          /><hr class="light my-4">
+          <input type="text" id="calendar-input" class="cityStatesTypeahead span9 input-append btn  btn-xl" name="search-address" autocomplete="off"
+            data-provide="typeahead" required="required" autofocus />
+          <hr class="light my-4">
         </div>
       </div>
     </div>
+    <div class="col-lg-4 col-sm-6"></div>
+    <a class="weatherwidget-io" href="https://forecast7.com/en/32d22n110d93/tucson/" data-label_1="TUCSON" data-label_2="WEATHER" data-font="Noto Serif" data-icons="Climacons" data-theme="weather_one">TUCSON WEATHER</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
   </section>
 
   <section class="p-0" id="portfolio">
