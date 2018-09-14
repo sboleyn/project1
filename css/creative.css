@@ -26,7 +26,7 @@ a {
 }
 
 a:hover {
-  color: #f05f40;
+  color: rgba(64, 214, 240, 0.9);
 }
 
 h1,
@@ -39,7 +39,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #F05F40 !important;
+  background: rgba(64, 214, 240, 0.9) !important;
 }
 
 .bg-dark {
@@ -234,7 +234,7 @@ header.masthead p {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(240, 95, 64, 0.9);
+  background: rgba(240, 95, 64, 0.5);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -298,7 +298,7 @@ header.masthead p {
 }
 
 .btn-primary {
-  background-color: #F05F40;
+  background-color: #F05F40 !important;
   border-color: #F05F40;
 }
 

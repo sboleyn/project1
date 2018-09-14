@@ -26,6 +26,9 @@
   <!-- Custom styles for this template -->
   <link href="css/creative.css" rel="stylesheet">
   <link href="css/calender.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+  
   <style>
     #search-btn,
     #search-address {
@@ -81,78 +84,31 @@
               autofocus
               /><a class="btn btn-light btn-xl js-scroll-trigger" id="search-btn" href="#services">Let's Go</a>
           <hr class="light my-4">
+          <h2 class="section-heading text-white">Date Selection</h2>
+          <hr class="light my-4">
+          <!-- Calendar Input -->
+          <select name="country" class="countries order-alpha" id="countryId">
+            <option value="">Select Country</option>
+        </select>
+        <select name="state" class="states order-alpha" id="stateId">
+            <option value="">Select State</option>
+        </select>
+        <select name="city" class="cities order-alpha" id="cityId">
+            <option value="">Select City</option>
+        </select>
+          <input type="text" 
+              id="calendar-input"
+              class="cityStatesTypeahead span9 input-append btn  btn-xl"
+              name="search-address"
+              autocomplete="off"
+              data-provide="typeahead"
+              required="required"
+              autofocus
+          /><hr class="light my-4">
         </div>
       </div>
     </div>
-    <div class="span11">
-        <div class="month"> 
-            <ul>
-              <li class="prev">&#10094;</li>
-              <li class="next">&#10095;</li>
-              <li>August<br><span style="font-size:18px">2018</span></li>
-            </ul>
-          </div>
-          
-          <ul class="weekdays">
-            <li>Mo</li>
-            <li>Tu</li>
-            <li>We</li>
-            <li>Th</li>
-            <li>Fr</li>
-            <li>Sa</li>
-            <li>Su</li>
-          </ul>
-          
-          <ul class="days"> 
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li><span class="active">10</span></li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29</li>
-            <li>30</li>
-            <li>31</li>
-            ...etc
-          </ul>
-      
-      <div class="control-group">
-      <!-- Bootstrap Typeahead -->
-      </div> <!-- /span11 -->
-      <div id="calendar"></div>
-
-		<script type="text/javascript" src="js/vendor/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="js/vendor/underscore-min.js"></script>
-		<script type="text/javascript" src="js/calendar.js"></script>
-		<script type="text/javascript">
-			var calendar = $("#calendar").calendar(
-				{
-					tmpl_path: "/tmpls/",
-					events_source: function () { return []; }
-				});	</script>
-
+    </section>
     <section class="p-0" id="portfolio">
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
@@ -263,7 +219,8 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
 
