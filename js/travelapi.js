@@ -21,6 +21,8 @@ var country = $("#country").val();
 // let start_date = moment($("#start-date").val()).format(dateFormat);
 // let end_date = moment($("#end-date").val()).format(dateFormat);
 
+$("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
+
 // for testing
 var start_date = moment().format(dateFormat);
 var end_date = moment().add(10, 'days').format(dateFormat);
@@ -41,7 +43,9 @@ $("#gym").on("click", function () {
 
     queryURL += "&categories=108"
 
-    if (isClicked === false) {
+    $("#eventsDiv").empty();
+
+    // if (isClicked === false) {
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -51,24 +55,32 @@ $("#gym").on("click", function () {
                 // Tue, Oct 23, 6:00 PM
                 // The cutting room, newyork ny
                 // starts at 27.00 on ticket fly (link to ticket)
-                $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
+                // $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
                 // $("#eventsDiv").append("<div class='col-12' id='addEvent'>");
                 console.log(queryURL);
                 // console.log(resp.events[0]);
 
                 for (var i = 0; i < 5; i++) {
+                    var eve = resp.events[i];
                     console.log(resp.events[i]);
+
+                    if (eve.description.text){
                     $('#eventsDiv').append(
-                        "<div class='col-lg-4 col-sm-6'><div class='card' style='width: 18rem;'><img class='card-img-top' src='...' alt='Card image cap'><div class='card-body'><h5 class='card-title'> Card title</h5><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href='#' class='btn btn-primary'>Go somewhere</a></div ></div ></div>"
-                    );
+                        "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' style='width: 18rem;'><img class='card-img-top' src="+eve.logo.original.url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+ eve.name.text +"</h5><p class='card-text'>"+eve.description.text.substring(0,101)+"</p><p class='card-text'>Time Zone: "+eve.start.timezone+"</p><p class='card-text'>Local Time: "+eve.start.local+"</p><a href='"+eve.url+"' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                    )}
+                    else{
+                        $('#eventsDiv').append(
+                        "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' style='width: 18rem;'><img class='card-img-top' src="+eve.logo.original.url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+ eve.name.text +"</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: "+eve.start.timezone+"</p><a hre<p class='card-text'>Local Time: "+eve.start.local+"</p><a href='"+eve.url+"' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                    )
+                    }
                 };
 
 
-                isClicked = true;
-                console.log(isClicked);
+                // isClicked = true;
+                // console.log(isClicked);
 
             });
-    }
+    // }
 
 })
 
