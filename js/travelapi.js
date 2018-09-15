@@ -13,34 +13,18 @@ Seasonal & Holiday 116 */
 var dateFormat = "YYYY-MM-DDT00:00:00";
 // var dateFormat = "YYYY-MM-DDThh:mm:ss";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-var isClicked = false;
-
->>>>>>> master
-=======
 
 var isClicked = false;
 
->>>>>>> 8d7a8c43ca8d8173b9f01d5b60ea6116dd34689c
 // Necessary variable for weather
 var city = $("#city").val();
 var country = $("#country").val();
 // let start_date = moment($("#start-date").val()).format(dateFormat);
 // let end_date = moment($("#end-date").val()).format(dateFormat);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-$("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
-
->>>>>>> master
-=======
 
 $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
->>>>>>> 8d7a8c43ca8d8173b9f01d5b60ea6116dd34689c
 // for testing
 var start_date = moment().format(dateFormat);
 var end_date = moment().add(10, 'days').format(dateFormat);
@@ -55,40 +39,12 @@ var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.
 
 
 // #portfolio is the section to add div to
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-
->>>>>>> master
-=======
-
->>>>>>> 8d7a8c43ca8d8173b9f01d5b60ea6116dd34689c
 $("#gym").on("click", function () {
 
     queryURL += "&categories=108"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-        .then(function (resp) {
-            // Example return Music & Conversation with Marty
-            // Tue, Oct 23, 6:00 PM
-            // The cutting room, newyork ny
-            // starts at 27.00 on ticket fly (link to ticket)
-            console.log(queryURL);
-            console.log(resp);
-            $("#portfolio").append("<div class=col-12>");
-        });
 
-})
-=======
-=======
-
->>>>>>> 8d7a8c43ca8d8173b9f01d5b60ea6116dd34689c
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
@@ -323,12 +279,4 @@ $("#goToSeasonal").on("click", function () {
             });
     // }
 
-<<<<<<< HEAD
 })
-
-
-
->>>>>>> master
-=======
-})
->>>>>>> 8d7a8c43ca8d8173b9f01d5b60ea6116dd34689c
