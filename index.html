@@ -5,10 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="travel">
   <meta name="author" content="">
 
-  <title>Project 1</title>
+  <title>Wheather Wanderer</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,67 +34,82 @@
 
 <body id="page-top">
 
+  <!-- Title Section -->
   <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong>Travel Guide</strong>
+            <strong>Wheather Wanderer</strong>
           </h1>
           <hr>
           <div class="col-lg-8 mx-auto">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find your Travel Destination</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find your Destination</a>
           </div>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Destination Search Section -->
   <section class="bg-primary" style="background: rgba(64, 214, 240, 0.9)" id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
           <h2 class="section-heading text-white">What's your destination?</h2>
-          <hr class="light my-4">
 
-          <!-- Search Bar -->
+          <!-- Location Search Bar -->
+          <hr class="light my-4">
           <select name="country" class="countries order-alpha btn" id="countryId">
             <option value="">Select Country</option>
-        </select>
-        <select name="state" class="states order-alpha btn" id="stateId">
+          </select>
+          <select name="state" class="states order-alpha btn" id="stateId">
             <option value="">Select State</option>
-        </select>
-        <select name="city" class="cities order-alpha btn" id="cityId">
+          </select>
+          <select name="city" class="cities order-alpha btn" id="cityId">
             <option value="">Select City</option>
-        </select>
+          </select>
+
+          <!-- Date Search Bar -->
           <hr class="light my-4">
           <h2 class="section-heading text-white">Date Selection</h2>
           <hr class="light my-4">
+
           <!-- Calendar Input -->
           <input type="text" id="calendar-input" class="cityStatesTypeahead span9 input-append btn  btn-xl" name="search-address" autocomplete="off"
             data-provide="typeahead" required="required" autofocus />
           <hr class="light my-4">
-          <a
-            class="btn btn-light btn-xl js-scroll-trigger" id="search-btn" href="#services">Let's Go</a>
-            <hr class="light my-4">
-          </div>
+          <a class="btn btn-light btn-xl js-scroll-trigger" id="search-btn" href="#portfolio">Let's Go</a>
+          <hr class="light my-4">
+        </div>
       </div>
     </div>
+
+    <!-- Weather Widget -->
     <div class="col-lg-4 col-sm-6"></div>
-    <a class="weatherwidget-io" href="https://forecast7.com/en/32d22n110d93/tucson/" data-label_1="TUCSON" data-label_2="WEATHER" data-font="Noto Serif" data-icons="Climacons" data-theme="weather_one">TUCSON WEATHER</a>
+    <a class="weatherwidget-io" href="https://forecast7.com/en/32d22n110d93/tucson/?unit=us" data-label_1="TUCSON" data-label_2="WEATHER"
+      data-font="Noto Serif" data-days="5" data-theme="pure">TUCSON WEATHER</a>
     <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+      !function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }
+        (document, 'script', 'weatherwidget-io-js');
     </script>
   </section>
 
+<!-- Event Button Section -->
   <section class="p-0" id="portfolio">
     <div class="container-fluid p-0">
       <div class="row no-gutters popup-gallery">
+
         <div class="col-lg-4 col-sm-6">
-
-
           <button type="button" id="gym" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/gym1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -106,13 +121,11 @@
               </div>
             </a>
           </button>
-
-
         </div>
-        <div class="col-lg-4 col-sm-6">
 
+        <div class="col-lg-4 col-sm-6">
           <button type="button" id="food" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/food1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -127,9 +140,8 @@
         </div>
 
         <div class="col-lg-4 col-sm-6">
-
           <button type="button" id="event" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/event1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -141,12 +153,11 @@
               </div>
             </a>
           </button>
-
         </div>
-        <div class="col-lg-4 col-sm-6">
 
+        <div class="col-lg-4 col-sm-6">
           <button type="button" id="goToOutdoors" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/trail1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -158,13 +169,11 @@
               </div>
             </a>
           </button>
-
         </div>
+
         <div class="col-lg-4 col-sm-6">
-
-
           <button type="button" id="goToArts" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/arts1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -176,12 +185,11 @@
               </div>
             </a>
           </button>
-
         </div>
-        <div class="col-lg-4 col-sm-6">
 
+        <div class="col-lg-4 col-sm-6">
           <button type="button" id="goToSeasonal" class="travelBtn">
-            <a class="portfolio-box">
+            <a class="portfolio-box" id="portfolio-box">
               <img class="img-fluid img-thumbnail" src="img/seasonal1.jpg" alt="Responsive image">
 
               <div class="portfolio-box-caption">
@@ -193,12 +201,11 @@
               </div>
             </a>
           </button>
-
         </div>
       </div>
     </div>
-  </section>
 
+  </section>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -209,7 +216,7 @@
   <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-=  <!-- Custom scripts for this template -->
+  <!-- Custom scripts for this template -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="https://geodata.solutions/includes/countrystatecity.js"></script>
   <script type="text/javascript" src="js/daterangepicker.js"></script>
@@ -217,6 +224,7 @@
   <script type="text/javascript" src="js/travelapi.js"></script>
   <script type="text/javascript" src="js/statecodes.js"></script>
   <script type="text/javascript" src="js/weatherbit.js"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
 
 
 </body>
