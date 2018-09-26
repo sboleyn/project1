@@ -42,7 +42,7 @@ $("#search-btn").on("click", function () {
     var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
     console.log(city);
     console.log(country);
-    var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+    var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city +"," + country;
     console.log(query);
 });
 
