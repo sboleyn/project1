@@ -17,8 +17,8 @@ var dateFormat = "YYYY-MM-DDT00:00:00";
 var isClicked = false;
 
 // Necessary variable for weather
-var city = $("#city").val();
-var country = $("#country").val();
+// var city = $("#city").val();
+// var country = $("#country").val();
 // let start_date = moment($("#start-date").val()).format(dateFormat);
 // let end_date = moment($("#end-date").val()).format(dateFormat);
 
@@ -26,6 +26,11 @@ var country = $("#country").val();
 //     console.log("button works");
 //     console.log($("#countryId"));
 // });
+
+var city = "";
+var country = "";
+var start_date = "";
+var end_date = "";
 
 $("#search-btn").on("click", function () {
 
@@ -51,7 +56,8 @@ $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 
 var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
-console.log(queryURL)
+
+console.log(queryURL);
 //Need to get categories based off which picture is clicked, each picture should have onclick function that populates a categories into the query.
 
 
