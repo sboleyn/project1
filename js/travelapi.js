@@ -45,6 +45,7 @@ $("#search-btn").on("click", function () {
     var query = baseURL + "&start_date.range_start=" + moment(start_date, 'MM-DD-YYYY').format(dateFormat) + "&start_date.range_end=" + moment(end_date, 'MM-DD-YYYY').format(dateFormat) +"&location.address="+ city +"," + country;
     // + city +"," + country
     console.log(query);
+    $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
     $("#gym").on("click", function () {
 
         query += "&categories=108"
@@ -295,7 +296,7 @@ $("#search-btn").on("click", function () {
 
 
 
-$("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
+// $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
 // for testing
 // var start_date = moment().format(dateFormat);
