@@ -36,8 +36,6 @@ $("#search-btn").on("click", function () {
     var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
     console.log(city);
     console.log(country);
-
-
 });
 
 
@@ -45,15 +43,15 @@ $("#search-btn").on("click", function () {
 $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
 // for testing
-var start_date = moment().format(dateFormat);
-var end_date = moment().add(10, 'days').format(dateFormat);
-console.log(start_date);
-console.log(end_date);
+// var start_date = moment().format(dateFormat);
+// var end_date = moment().add(10, 'days').format(dateFormat);
+// console.log(start_date);
+// console.log(end_date);
 
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 
-var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date;
-
+var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+console.log(queryURL)
 //Need to get categories based off which picture is clicked, each picture should have onclick function that populates a categories into the query.
 
 
