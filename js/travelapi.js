@@ -38,11 +38,11 @@ $("#search-btn").on("click", function () {
     // Necessary variables for weather
     var city = $("#cityId").val().trim();
     var country = $("#countryId").val().trim();
-    var start_date = moment($("#calendar-input").daterangepicker().val().split("-")[0].trim());
-    var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
+    var start_date = moment($("#calendar-input").daterangepicker().val().split("-")[0].trim())["_i"];
+    var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim())["_i"];
     console.log(city);
     console.log(country);
-    var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address=";
+    var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city +"," + country;
     // + city +"," + country
     console.log(query);
 });
