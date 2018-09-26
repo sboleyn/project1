@@ -32,6 +32,7 @@ var country = "";
 var start_date = "";
 var end_date = "";
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
+$("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
 $("#search-btn").on("click", function () {
 
@@ -45,7 +46,7 @@ $("#search-btn").on("click", function () {
     var query = baseURL + "&start_date.range_start=" + moment(start_date, 'MM-DD-YYYY').format(dateFormat) + "&start_date.range_end=" + moment(end_date, 'MM-DD-YYYY').format(dateFormat) +"&location.address="+ city +"," + country;
     // + city +"," + country
     console.log(query);
-    $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
+    
     $("#gym").on("click", function () {
 
         query += "&categories=108"
