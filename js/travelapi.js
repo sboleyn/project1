@@ -31,7 +31,7 @@ var city = "";
 var country = "";
 var start_date = "";
 var end_date = "";
-
+var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 $("#search-btn").on("click", function () {
 
     // Necessary variables for weather
@@ -41,6 +41,8 @@ $("#search-btn").on("click", function () {
     var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
     console.log(city);
     console.log(country);
+    var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+    console.log(queryURL);
 });
 
 
@@ -53,11 +55,11 @@ $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'
 // console.log(start_date);
 // console.log(end_date);
 
-var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
+// var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 
-var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+// var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
 
-console.log(queryURL);
+
 //Need to get categories based off which picture is clicked, each picture should have onclick function that populates a categories into the query.
 
 
