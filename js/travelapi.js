@@ -42,7 +42,7 @@ $("#search-btn").on("click", function () {
     var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim())["_i"];
     console.log(city);
     console.log(country);
-    var query = baseURL + "&start_date.range_start=" + start_date.format(dateFormat) + "&start_date.range_end=" + end_date.format(dateFormat) +"&location.address="+ city +"," + country;
+    var query = baseURL + "&start_date.range_start=" + moment(start_date, 'MM-DD-YYYY').format(dateFormat) + "&start_date.range_end=" + moment(end_date, 'MM-DD-YYYY').format(dateFormat) +"&location.address="+ city +"," + country;
     // + city +"," + country
     console.log(query);
 });
