@@ -22,6 +22,11 @@ var country = $("#country").val();
 // let start_date = moment($("#start-date").val()).format(dateFormat);
 // let end_date = moment($("#end-date").val()).format(dateFormat);
 
+$("#search-btn").click(event => {
+    console.log("button works");
+    console.log($("#countryId"));
+});
+
 
 $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
