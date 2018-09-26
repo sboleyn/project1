@@ -32,6 +32,7 @@ var country = "";
 var start_date = "";
 var end_date = "";
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
+
 $("#search-btn").on("click", function () {
 
     // Necessary variables for weather
@@ -41,8 +42,8 @@ $("#search-btn").on("click", function () {
     var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim());
     console.log(city);
     console.log(country);
-    var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
-    console.log(queryURL);
+    var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+    console.log(query);
 });
 
 
@@ -57,7 +58,7 @@ $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'
 
 // var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
 
-// var queryURL = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
+// var query = baseURL + "&start_date.range_start=" + start_date + "&start_date.range_end=" + end_date +"&location.address="+ city + country;
 
 
 //Need to get categories based off which picture is clicked, each picture should have onclick function that populates a categories into the query.
@@ -67,14 +68,14 @@ $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'
 
 $("#gym").on("click", function () {
 
-    queryURL += "&categories=108"
+    query += "&categories=108"
 
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
@@ -84,7 +85,7 @@ $("#gym").on("click", function () {
             // starts at 27.00 on ticket fly (link to ticket)
             // $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
             // $("#eventsDiv").append("<div class='col-12' id='addEvent'>");
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
@@ -114,17 +115,17 @@ $("#gym").on("click", function () {
 
 $("#food").on("click", function () {
 
-    queryURL += "&categories=110"
+    query += "&categories=110"
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
@@ -154,17 +155,17 @@ $("#food").on("click", function () {
 
 $("#event").on("click", function () {
 
-    queryURL += "&categories=103"
+    query += "&categories=103"
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
@@ -194,17 +195,17 @@ $("#event").on("click", function () {
 
 $("#goToOutdoors").on("click", function () {
 
-    queryURL += "&categories=109"
+    query += "&categories=109"
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
@@ -234,17 +235,17 @@ $("#goToOutdoors").on("click", function () {
 
 $("#goToArts").on("click", function () {
 
-    queryURL += "&categories=105"
+    query += "&categories=105"
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
@@ -274,17 +275,17 @@ $("#goToArts").on("click", function () {
 
 $("#goToSeasonal").on("click", function () {
 
-    queryURL += "&categories=116"
+    query += "&categories=116"
 
     $("#eventsDiv").empty();
 
     // if (isClicked === false) {
     $.ajax({
-        url: queryURL,
+        url: query,
         method: "GET"
     })
         .then(function (resp) {
-            console.log(queryURL);
+            console.log(query);
             // console.log(resp.events[0]);
 
             for (var i = 0; i < 5; i++) {
