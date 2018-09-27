@@ -14,24 +14,14 @@ var dateFormat = "YYYY-MM-DDT00:00:00";
 // var dateFormat = "YYYY-MM-DDThh:mm:ss";
 
 
-var isClicked = false;
-
-// Necessary variable for weather
-// var city = $("#city").val();
-// var country = $("#country").val();
-// let start_date = moment($("#start-date").val()).format(dateFormat);
-// let end_date = moment($("#end-date").val()).format(dateFormat);
-
-// $("#search-btn").click(event => {
-//     console.log("button works");
-//     console.log($("#countryId"));
-// });
+// var isClicked = false;
 
 var city = "";
 var country = "";
 var start_date = "";
 var end_date = "";
 var baseURL = "https://www.eventbriteapi.com/v3/events/search/?sort_by=best&token=B7UELWTCRT7HCHZN3I7S";
+
 $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
 
 $("#search-btn").on("click", function () {
