@@ -31,8 +31,8 @@ $("#search-btn").on("click", function () {
     if ($("#cityId").val()){
     city = $("#cityId").val().trim();
     // href="https://forecast7.com/en/32d22n110d93/tucson/?unit=us" data-label_1="TUCSON" data-label_2="WEATHER"
-    $(".weatherwidget-io").attr("href", "https://forecast7.com/en/32d22n110d93/"+city+"/?unit=us");
-    $(".weatherwidget-io").attr("data-label_1", city.toUpperCase());
+    // $(".weatherwidget-io").attr("href", "https://forecast7.com/en/32d22n110d93/"+city+"/?unit=us");
+    // $(".weatherwidget-io").attr("data-label_1", city.toUpperCase());
     };
 
     if ($("#countryId").val()){
