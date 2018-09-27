@@ -29,3 +29,9 @@
 button{
     border-style: none;
 }
+
+.card{
+    width: 35rem;
+    padding: 10px;
+    margin: 10px;
+}
