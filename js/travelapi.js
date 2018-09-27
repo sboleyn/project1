@@ -37,10 +37,10 @@ $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'
 $("#search-btn").on("click", function () {
 
     // Necessary variables for weather
-    var city = $("#cityId").val().trim();
-    var country = $("#countryId").val().trim();
-    var start_date = moment($("#calendar-input").daterangepicker().val().split("-")[0].trim())["_i"];
-    var end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim())["_i"];
+    city = $("#cityId").val().trim();
+    country = $("#countryId").val().trim();
+    start_date = moment($("#calendar-input").daterangepicker().val().split("-")[0].trim())["_i"];
+    end_date = moment($("#calendar-input").daterangepicker().val().split("-")[1].trim())["_i"];
     console.log(city);
     console.log(country);
     var query = baseURL + "&start_date.range_start=" + moment(start_date, 'MM-DD-YYYY').format(dateFormat) + "&start_date.range_end=" + moment(end_date, 'MM-DD-YYYY').format(dateFormat) +"&location.address="+ city +"," + country;
@@ -49,7 +49,7 @@ $("#search-btn").on("click", function () {
     
     $("#gym").on("click", function () {
 
-        query += "&categories=108"
+        var query1 = query + "&categories=108";
     
     
         $("#eventsDiv").empty();
@@ -66,7 +66,7 @@ $("#search-btn").on("click", function () {
                 // starts at 27.00 on ticket fly (link to ticket)
                 // $("#portfolio").append("<div class='row no-gutters popup-gallery' id='eventsDiv'>");
                 // $("#eventsDiv").append("<div class='col-12' id='addEvent'>");
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
@@ -96,7 +96,7 @@ $("#search-btn").on("click", function () {
     
     $("#food").on("click", function () {
     
-        query += "&categories=110"
+        var query1 = query + "&categories=110";
     
         $("#eventsDiv").empty();
     
@@ -106,7 +106,7 @@ $("#search-btn").on("click", function () {
             method: "GET"
         })
             .then(function (resp) {
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
@@ -136,7 +136,7 @@ $("#search-btn").on("click", function () {
     
     $("#event").on("click", function () {
     
-        query += "&categories=103"
+        var query1 = query + "&categories=103";
     
         $("#eventsDiv").empty();
     
@@ -146,7 +146,7 @@ $("#search-btn").on("click", function () {
             method: "GET"
         })
             .then(function (resp) {
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
@@ -176,7 +176,7 @@ $("#search-btn").on("click", function () {
     
     $("#goToOutdoors").on("click", function () {
     
-        query += "&categories=109"
+        var query1 = query + "&categories=109";
     
         $("#eventsDiv").empty();
     
@@ -186,7 +186,7 @@ $("#search-btn").on("click", function () {
             method: "GET"
         })
             .then(function (resp) {
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
@@ -216,7 +216,7 @@ $("#search-btn").on("click", function () {
     
     $("#goToArts").on("click", function () {
     
-        query += "&categories=105"
+        var query1 = query + "&categories=105";
     
         $("#eventsDiv").empty();
     
@@ -226,7 +226,7 @@ $("#search-btn").on("click", function () {
             method: "GET"
         })
             .then(function (resp) {
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
@@ -256,7 +256,7 @@ $("#search-btn").on("click", function () {
     
     $("#goToSeasonal").on("click", function () {
     
-        query += "&categories=116"
+        var query1 = query + "&categories=116";
     
         $("#eventsDiv").empty();
     
@@ -266,7 +266,7 @@ $("#search-btn").on("click", function () {
             method: "GET"
         })
             .then(function (resp) {
-                console.log(query);
+                console.log(query1);
                 // console.log(resp.events[0]);
     
                 for (var i = 0; i < 5; i++) {
