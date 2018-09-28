@@ -8,20 +8,6 @@
     background-color: #f05f40;
 }
 
-/* .travelBtn.top{
-    padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-}
-
-.travelBtn.bottom{
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 10px;
-} */
-
 .img-thumbnail{
     padding: 0px;
 }
@@ -31,7 +17,10 @@ button{
 }
 
 .card{
-    /* width: 25rem; */
     padding: 10px;
     margin: 10px;
+}
+
+.popup-gallery{
+    background-color: #f05f40;
 }
