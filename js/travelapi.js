@@ -73,12 +73,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
@@ -113,12 +113,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-md-4 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
@@ -153,12 +153,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
@@ -193,12 +193,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
@@ -233,12 +233,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
@@ -273,12 +273,12 @@ $("#search-btn").on("click", function () {
     
                     if (eve.description.text) {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>" + eve.description.text.substring(0, 101) + "</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                     else {
                         $('#eventsDiv').append(
-                            "<div class='col-lg-4 col-sm-6 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
+                            "<div class='col-lg-4 col-md-6 col-12 mt-3'><div class='card' ;'><img class='card-img-top' src=" + eve.logo.original.url + " alt='Card image cap'><div class='card-body'><h5 class='card-title'>" + eve.name.text + "</h5><p class='card-text'>There is no description for this event.</p><p class='card-text'>Time Zone: " + eve.start.timezone + "</p><a hre<p class='card-text'>Local Time: " + eve.start.local + "</p><a href='" + eve.url + "' class='btn btn-primary'>View Event</a></div ></div ></div>"
                         )
                     }
                 };
